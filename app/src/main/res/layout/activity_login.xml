@@ -27,7 +27,7 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="15dp"
         android:textColor="#66000000"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/Password_input"
@@ -41,7 +41,7 @@
         android:paddingLeft="15dp"
         android:background="@drawable/password_input"
         android:hint="@string/password"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textColor="#66000000"
         android:inputType="textPassword"
         android:imeOptions="actionGo"
@@ -56,12 +56,12 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
-        android:paddingTop="8dp"
+        android:paddingTop="10dp"
         android:paddingLeft="115dp"
         android:background="@drawable/login_button"
         android:text="@string/login_button"
-        android:textSize="20sp"
-        android:textColor="#b36fb8b2"
+        android:textSize="17sp"
+        android:textColor="#e66fb8b2"
         />
 
     <CheckBox
@@ -70,12 +70,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="121dp"
         android:layout_marginRight="110dp"
         android:layout_below="@id/Login_button"
         android:text="@string/login_condition"
-        android:textSize="15sp"
-        android:textColor="#b3000000"/>
+        android:textSize="14sp"
+        android:textColor="#66000000"/>
 
 
     <LinearLayout
@@ -88,17 +88,37 @@
         android:id="@+id/find_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="45dp"
+        android:textSize="14sp"
+        android:textColor="#66000000"
         android:text="@string/find_email" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#66000000"
+            android:text="@string/stick"/>
     <TextView
         android:id="@+id/find_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#66000000"
         android:text="@string/find_password" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#66000000"
+            android:text="@string/stick"/>
     <TextView
         android:id="@+id/registration"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="#66000000"
+        android:textSize="14sp"
         android:text="@string/registration" />
     </LinearLayout>
 </RelativeLayout>
