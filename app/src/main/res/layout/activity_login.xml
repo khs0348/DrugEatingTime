@@ -56,7 +56,7 @@
         android:textColor="#66000000"
         android:inputType="textPassword"
         android:imeOptions="actionGo"
-        android:autofillHints="" />
+        />
 
     <TextView
         android:id="@+id/Login_button"

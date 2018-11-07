@@ -21,9 +21,8 @@
         <activity android:name=".Activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        <activity android:name=".Activity.LoginActivity">
-        </activity>
+        </activity><activity android:name=".Activity.LoginActivity"></activity>
+
     </application>
 
 </manifest>

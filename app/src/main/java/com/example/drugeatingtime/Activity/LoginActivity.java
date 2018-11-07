@@ -1,9 +1,7 @@
 package com.example.drugeatingtime.Activity;
 
-        import android.content.pm.ActivityInfo;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
-
         import com.example.drugeatingtime.R;
 
 public class LoginActivity extends AppCompatActivity{
