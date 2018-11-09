@@ -22,6 +22,6 @@ public class IntroActivity extends MainActivity {
 
                 finish();
             }
-        },2000);//n초후 MainActivity 로 화면 전환
+        },1000);//n초후 MainActivity 로 화면 전환
     }
 }

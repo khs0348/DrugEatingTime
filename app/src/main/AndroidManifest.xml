@@ -3,6 +3,7 @@
     package="com.example.drugeatingtime">
 
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_drug"

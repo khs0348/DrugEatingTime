@@ -76,12 +76,12 @@
 
     <CheckBox
         android:id="@+id/login_maintain"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Login_button"
-        android:layout_marginLeft="121dp"
+        android:layout_marginLeft="119dp"
         android:layout_marginTop="15dp"
-        android:layout_marginRight="121dp"
+        android:layout_marginRight="115dp"
         android:fontFamily="@font/regular"
         android:text="@string/login_condition"
         android:textColor="#66000000"
@@ -133,6 +133,7 @@
             android:layout_height="match_parent"
             android:textColor="#66000000"
             android:textSize="14sp"
+
             android:fontFamily="@font/regular"
             android:text="@string/registration" />
     </LinearLayout>

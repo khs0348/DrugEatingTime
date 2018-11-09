@@ -1,10 +1,13 @@
 package com.example.drugeatingtime.Activity;
 
-        import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
-        import com.example.drugeatingtime.R;
+    import android.os.Bundle;
+    import android.support.v7.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity{
+    import com.example.drugeatingtime.R;
+
+
+public class LoginActivity extends AppCompatActivity  {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,4 +16,5 @@ public class LoginActivity extends AppCompatActivity{
 
 
     }
-}
+    }
+
