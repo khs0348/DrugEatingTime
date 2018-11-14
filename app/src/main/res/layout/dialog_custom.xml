@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="110dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="140dp"
+    android:layout_gravity="center"
     android:orientation="vertical"
     >
 
@@ -13,7 +17,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:background="@drawable/dialog" />
 
 
 
@@ -21,32 +26,32 @@
 
     <LinearLayout
         android:id="@+id/Email_make"
-        android:layout_width="348dp"
-        android:layout_height="46dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
         android:background="@drawable/email_make">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:background="@drawable/email_input"
+            android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="@string/email_id"
             android:textColor="#66000000"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
+
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:maxLength="30"
             android:background="@drawable/empty"
             android:fontFamily="@font/regular"
             android:inputType="textEmailAddress"
-            android:paddingLeft="15dp"
             android:textColor="#66000000"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 </LinearLayout>
 
 
@@ -59,31 +64,30 @@
         android:id="@+id/Password_make"
         android:layout_below="@id/Email_make"
         android:layout_marginTop="8dp"
-        android:layout_width="348dp"
-        android:layout_height="46dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:orientation="horizontal"
         android:background="@drawable/password_make">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:background="@drawable/password_input"
+            android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="@string/password"
             android:textColor="#66000000"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:maxLength="15"
         android:background="@drawable/empty"
         android:inputType="textPassword"
-        android:paddingLeft="15dp"
         android:textColor="#66000000"
         android:fontFamily="@font/regular"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
     </LinearLayout>
 
 
@@ -91,152 +95,232 @@
 <LinearLayout
     android:id="@+id/Password_confirm"
     android:layout_below="@id/Password_make"
-    android:layout_width="348dp"
-    android:layout_height="46dp"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
     android:layout_marginTop="4dp"
-    android:layout_marginLeft="45dp"
-    android:layout_marginRight="45dp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
     android:background="@drawable/password_confirm"
     >
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="3.5"
-        android:background="@drawable/password_input"
+        android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="@string/password_confirm"
         android:textColor="#66000000"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_marginLeft="20dp"
+        android:maxLength="15"
         android:background="@drawable/empty"
         android:fontFamily="@font/regular"
         android:inputType="textPassword"
-        android:paddingLeft="15dp"
+
         android:textColor="#66000000"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
 </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/Name"
         android:layout_below="@id/Password_confirm"
-        android:layout_width="348dp"
-        android:layout_height="46dp"
-        android:layout_marginLeft="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="24dp"
-        android:layout_marginRight="45dp"
+        android:layout_marginRight="25dp"
         android:background="@drawable/name_make"
         >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="6"
+            android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="@string/name"
             android:textColor="#66000000"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingLeft="15dp"
+        android:layout_marginLeft="20dp"
+        android:maxLength="4"
         android:background="@drawable/empty"
         android:inputType="textPersonName"
         android:textColor="#66000000"
         android:fontFamily="@font/regular"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
     </LinearLayout>
 
 
 
 
 
+<LinearLayout
+    android:id="@+id/Birth"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:background="@drawable/birth_make"
+    android:layout_below="@+id/Name">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="@string/birth"
+        android:textColor="#66000000"
+        android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/Birth"
-        android:layout_width="348dp"
-        android:layout_height="46dp"
-        android:layout_weight="1"
-        android:layout_below="@id/Name"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="45dp"
-        android:background="@drawable/login_button"
-        android:text="@string/birth"
-        android:paddingLeft="15dp"
-        android:textColor="#66000000"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:maxLength="8"
+        android:hint="ex)19950520"
+        android:background="@drawable/empty"
+        android:layout_marginLeft="15dp"
+        android:textColor="#88000000"
+        android:inputType="number"
         android:fontFamily="@font/regular"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
 
     <LinearLayout
-        android:layout_width="348dp"
+        android:id="@+id/select"
+        android:layout_below="@id/Birth"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:orientation="horizontal"
-        android:layout_below="@id/Birth">
+        >
+
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="50dp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#b3000000"
+                android:textSize="13sp"
+                android:fontFamily="@font/regular"
                 android:text="@string/sex"/>
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
-                <RadioButton
+                <TextView
                     android:id="@+id/man"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#66000000"
+                    android:textSize="14sp"
+                    android:background="@drawable/choose_left"
                     android:text="@string/men" />
-                <RadioButton
+
+                <TextView
                     android:id="@+id/women"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#66000000"
+                    android:textSize="14sp"
+                    android:background="@drawable/choose_right"
                     android:text="@string/women" />
             </LinearLayout>
         </LinearLayout>
 
+
+
+
+
+
+
+
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="50dp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#b3000000"
+                android:textSize="13sp"
+                android:fontFamily="@font/regular"
                 android:text="@string/pregnancy" />
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <RadioButton
+                <TextView
                     android:id="@+id/exist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#66000000"
+                    android:textSize="14sp"
+                    android:background="@drawable/choose_left"
                     android:text="@string/OK" />
-                <RadioButton
+                <TextView
                     android:id="@+id/non_exist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#66000000"
+                    android:textSize="14sp"
+                    android:background="@drawable/choose_right"
                     android:text="@string/NO" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
+
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:text="@string/join"
+    android:textColor="#ffffff"
+    android:textSize="14sp"
+    android:background="@drawable/join_button"
+    android:layout_below="@id/select"/>
 
 </RelativeLayout>

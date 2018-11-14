@@ -102,10 +102,11 @@
             android:textSize="14sp"
             android:fontFamily="@font/regular"
             android:textColor="#66000000"
+            android:background="#84c3bd"
             android:text="@string/find_email" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:textColor="#66000000"
@@ -117,11 +118,12 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:fontFamily="@font/regular"
+            android:background="#84c3bd"
             android:textColor="#66000000"
             android:text="@string/find_password" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:textColor="#66000000"
@@ -129,12 +131,13 @@
             android:text="@string/stick"/>
         <TextView
             android:id="@+id/registration"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColor="#66000000"
             android:textSize="14sp"
-
+            android:background="#84c3bd"
             android:fontFamily="@font/regular"
-            android:text="@string/registration" />
+            android:text="@string/registration"
+            />
     </LinearLayout>
 </RelativeLayout>
