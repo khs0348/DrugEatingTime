@@ -35,7 +35,7 @@
         android:background="@drawable/email_make">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="@string/email_id"
@@ -44,14 +44,14 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:maxLength="30"
             android:background="@drawable/empty"
             android:fontFamily="@font/regular"
             android:inputType="textEmailAddress"
             android:textColor="#66000000"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 </LinearLayout>
 
 
@@ -72,7 +72,7 @@
         android:background="@drawable/password_make">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="@string/password"
@@ -87,7 +87,7 @@
         android:inputType="textPassword"
         android:textColor="#66000000"
         android:fontFamily="@font/regular"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
     </LinearLayout>
 
 
@@ -105,7 +105,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="@string/password_confirm"
@@ -122,7 +122,7 @@
         android:inputType="textPassword"
 
         android:textColor="#66000000"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
 </LinearLayout>
 
 
@@ -139,7 +139,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="@string/name"
@@ -154,7 +154,7 @@
         android:inputType="textPersonName"
         android:textColor="#66000000"
         android:fontFamily="@font/regular"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
     </LinearLayout>
 
 
@@ -173,7 +173,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="@string/birth"
@@ -182,15 +182,14 @@
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:maxLength="8"
-        android:hint="ex)19950520"
         android:background="@drawable/empty"
         android:layout_marginLeft="15dp"
         android:textColor="#88000000"
         android:inputType="number"
         android:fontFamily="@font/regular"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
 </LinearLayout>
 
 
@@ -312,6 +311,8 @@
 
 
 <Button
+
+    android:id="@+id/join"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:layout_marginTop="24dp"
@@ -321,6 +322,8 @@
     android:textColor="#ffffff"
     android:textSize="14sp"
     android:background="@drawable/join_button"
-    android:layout_below="@id/select"/>
+    android:layout_below="@id/select"
+    android:onClick="joinComplete"
+   />
 
 </RelativeLayout>

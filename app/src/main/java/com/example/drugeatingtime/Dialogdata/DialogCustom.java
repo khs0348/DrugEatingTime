@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import com.example.drugeatingtime.R;
 
-public class DialogCustom extends Dialog {
 
+
+public class DialogCustom extends Dialog{
 
 
     public DialogCustom(Context context){
@@ -24,9 +25,6 @@ public class DialogCustom extends Dialog {
         getWindow().setAttributes(lpWindow);
         setContentView(R.layout.dialog_custom);
 
-
-
-
-
     }
+
 }

@@ -23,6 +23,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity><activity android:name=".Activity.LoginActivity"></activity>
         <activity android:name=".Dialogdata.DialogCustom"></activity>
+        <activity android:name=".Activity.TimeSettingActivity"></activity>
+        <activity android:name=".Activity.DrugSerchActivity"></activity>
+        <activity android:name=".Activity.AppSettingActivity"></activity>
 
     </application>
 
