@@ -15,8 +15,6 @@ import com.example.drugeatingtime.R;
 public class LoginActivity extends AppCompatActivity {
 
     private DialogCustom oDialog;
-    public boolean loginON =false;
-
 
     LoginActivity m_oLoginActivity = null;
 
@@ -27,12 +25,11 @@ public class LoginActivity extends AppCompatActivity {
         m_oLoginActivity = this;
 
         registration();//회원가입 클릭
-
         logincorrect();//로그인버튼 클릭
 
     }
 
-    public void registration() {
+    public void registration() { //회원가입 클릭시 커스텀 다이얼로그 창 띄우는 함수
         TextView regist = (TextView)findViewById(R.id.registration);
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,22 +41,22 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void joinComplete(View view) {
+    public void joinComplete(View view) {//회원가입 완료 버튼 누를시 토스트메시지와 커스텀다이얼로그창 닫는 함수
                 Toast.makeText(getApplicationContext(), "회원가입 완료", Toast.LENGTH_SHORT).show();
                 oDialog.dismiss();
             }
 
-    public void logincorrect() {
+    public void logincorrect() {//로그인버튼 눌렀을때 토스트메시지와 메인페이지엑티비티로 화면전환하는 함수
         final TextView login =(TextView)findViewById(R.id.Login_button);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent it = new Intent(getApplicationContext(),MainActivity.class);
+                Toast.makeText(getApplicationContext(), "로그인 완료", Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(getApplicationContext(),MainPageActivity.class);
                 startActivity(it);
+
             }
         });
-
     }
 }
 
