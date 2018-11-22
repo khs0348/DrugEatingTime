@@ -12,16 +12,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:background="#84c3bd"
-
-        />
-
-    <ImageView
-        android:layout_width="180dp"
-        android:layout_height="280dp"
-        android:layout_centerInParent="true"
-        android:layout_above="@id/Password_input"
-        android:src="@drawable/login"
-        />
+        android:src="@drawable/login" />
 
     <EditText
         android:id="@+id/Email_input"
@@ -36,7 +27,6 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="15dp"
         android:textColor="#66000000"
-        android:fontFamily="@font/regular"
         android:textSize="15sp" />
 
     <EditText
@@ -52,94 +42,83 @@
         android:background="@drawable/password_input"
         android:hint="@string/password"
         android:textSize="15sp"
-        android:fontFamily="@font/regular"
         android:textColor="#66000000"
         android:inputType="textPassword"
         android:imeOptions="actionGo"
-        />
+ />
 
     <TextView
         android:id="@+id/Login_button"
         android:layout_below="@id/Password_input"
         android:layout_width="348dp"
         android:layout_height="46dp"
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:paddingTop="10dp"
-        android:paddingLeft="110dp"
+        android:paddingLeft="115dp"
         android:background="@drawable/login_button"
         android:text="@string/login_button"
         android:textSize="17sp"
         android:textColor="#e66fb8b2"
-        android:onClick="loginComplete"
         />
 
     <CheckBox
         android:id="@+id/login_maintain"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Login_button"
-        android:layout_marginLeft="119dp"
+        android:layout_weight="1"
         android:layout_marginTop="15dp"
-        android:layout_marginRight="115dp"
-        android:fontFamily="@font/regular"
+        android:layout_marginLeft="121dp"
+        android:layout_marginRight="110dp"
+        android:layout_below="@id/Login_button"
         android:text="@string/login_condition"
-        android:textColor="#66000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textColor="#66000000"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_below="@id/login_maintain"
         >
-        <TextView
-            android:id="@+id/find_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:textSize="14sp"
-            android:fontFamily="@font/regular"
-            android:textColor="#66000000"
-            android:background="#84c3bd"
-            android:text="@string/find_email" />
+    <TextView
+        android:id="@+id/find_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:textSize="14sp"
+        android:textColor="#66000000"
+        android:text="@string/find_email" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:textColor="#66000000"
-            android:fontFamily="@font/regular"
             android:text="@string/stick"/>
-        <TextView
-            android:id="@+id/find_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:fontFamily="@font/regular"
-            android:background="#84c3bd"
-            android:textColor="#66000000"
-            android:text="@string/find_password" />
+    <TextView
+        android:id="@+id/find_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#66000000"
+        android:text="@string/find_password" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:textColor="#66000000"
-            android:fontFamily="@font/regular"
             android:text="@string/stick"/>
-        <TextView
-            android:id="@+id/registration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#66000000"
-            android:textSize="14sp"
-            android:background="#84c3bd"
-            android:fontFamily="@font/regular"
-            android:text="@string/registration"
-
-            />
+    <TextView
+        android:id="@+id/registration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#66000000"
+        android:textSize="14sp"
+        android:text="@string/registration" />
     </LinearLayout>
 </RelativeLayout>

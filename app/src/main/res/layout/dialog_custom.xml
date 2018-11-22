@@ -21,9 +21,6 @@
         android:background="@drawable/dialog" />
 
 
-
-
-
     <LinearLayout
         android:id="@+id/Email_make"
         android:layout_width="match_parent"
