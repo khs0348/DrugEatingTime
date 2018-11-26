@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        android:background="#84c3bd"/>
+        android:background="#84c3bd" />
 
     <ImageView
         android:layout_width="180dp"
@@ -90,14 +90,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@id/login_maintain"
         >
     <TextView
         android:id="@+id/find_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
+        android:layout_marginLeft="40dp"
         android:textSize="14sp"
         android:textColor="#66000000"
         android:text="@string/find_email" />

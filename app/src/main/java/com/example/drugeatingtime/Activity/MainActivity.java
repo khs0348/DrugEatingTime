@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("김한결");
 
         TimeSetting();
-        DrugSerch();
+        DrugSearch();
         AppSetting();
 
         LoginButton();
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void DrugSerch() {
-        TextView DrugSerch = (TextView) findViewById(R.id.GoToLogin2);
-        DrugSerch.setOnClickListener(new View.OnClickListener() {
+    public void DrugSearch() {
+        TextView DrugSearch = (TextView) findViewById(R.id.GoToLogin2);
+        DrugSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "로그인 해주세요", Toast.LENGTH_SHORT).show();

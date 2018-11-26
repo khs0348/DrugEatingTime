@@ -19,11 +19,10 @@ public class MainPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_loginon);
 
         TimeSetting();
-        DrugSerch();
+        DrugSearch();
         AppSetting();
 
         LogoutButton();
-
     }
 
     public void TimeSetting() {
@@ -37,8 +36,8 @@ public class MainPageActivity extends AppCompatActivity {
         });
     }
 
-    public void DrugSerch() {
-        TextView DrugSerch = (TextView) findViewById(R.id.DrugSerch);
+    public void DrugSearch() {
+        TextView DrugSerch = (TextView) findViewById(R.id.DrugSearch);
         DrugSerch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

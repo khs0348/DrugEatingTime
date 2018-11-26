@@ -11,4 +11,5 @@
         android:text="어플 설정 화면 입니다."
         android:layout_gravity="center"
         android:textSize="35dp"/>
+
 </LinearLayout>

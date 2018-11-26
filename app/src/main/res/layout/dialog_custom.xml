@@ -49,7 +49,7 @@
             android:inputType="textEmailAddress"
             android:textColor="#66000000"
             android:textSize="12sp" />
-</LinearLayout>
+    </LinearLayout>
 
 
 
@@ -75,52 +75,52 @@
             android:text="@string/password"
             android:textColor="#66000000"
             android:textSize="14sp" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:maxLength="15"
-        android:background="@drawable/empty"
-        android:inputType="textPassword"
-        android:textColor="#66000000"
-        android:fontFamily="@font/regular"
-        android:textSize="12sp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:maxLength="15"
+            android:background="@drawable/empty"
+            android:inputType="textPassword"
+            android:textColor="#66000000"
+            android:fontFamily="@font/regular"
+            android:textSize="12sp" />
     </LinearLayout>
 
 
 
-<LinearLayout
-    android:id="@+id/Password_confirm"
-    android:layout_below="@id/Password_make"
-    android:layout_width="match_parent"
-    android:layout_height="35dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
-    android:background="@drawable/password_confirm"
-    >
+    <LinearLayout
+        android:id="@+id/Password_confirm"
+        android:layout_below="@id/Password_make"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/password_confirm"
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
-        android:text="@string/password_confirm"
-        android:textColor="#66000000"
-        android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/password_confirm"
+            android:textColor="#66000000"
+            android:textSize="14sp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:maxLength="15"
-        android:background="@drawable/empty"
-        android:fontFamily="@font/regular"
-        android:inputType="textPassword"
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:maxLength="15"
+            android:background="@drawable/empty"
+            android:fontFamily="@font/regular"
+            android:inputType="textPassword"
 
-        android:textColor="#66000000"
-        android:textSize="12sp" />
-</LinearLayout>
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 
     <LinearLayout
@@ -142,52 +142,52 @@
             android:text="@string/name"
             android:textColor="#66000000"
             android:textSize="14sp" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:maxLength="4"
-        android:background="@drawable/empty"
-        android:inputType="textPersonName"
-        android:textColor="#66000000"
-        android:fontFamily="@font/regular"
-        android:textSize="12sp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:maxLength="4"
+            android:background="@drawable/empty"
+            android:inputType="textPersonName"
+            android:textColor="#66000000"
+            android:fontFamily="@font/regular"
+            android:textSize="12sp" />
     </LinearLayout>
 
 
 
 
 
-<LinearLayout
-    android:id="@+id/Birth"
-    android:layout_width="match_parent"
-    android:layout_height="35dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
-    android:background="@drawable/birth_make"
-    android:layout_below="@+id/Name">
+    <LinearLayout
+        android:id="@+id/Birth"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/birth_make"
+        android:layout_below="@+id/Name">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
-        android:text="@string/birth"
-        android:textColor="#66000000"
-        android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/birth"
+            android:textColor="#66000000"
+            android:textSize="14sp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxLength="8"
-        android:background="@drawable/empty"
-        android:layout_marginLeft="15dp"
-        android:textColor="#88000000"
-        android:inputType="number"
-        android:fontFamily="@font/regular"
-        android:textSize="12sp" />
-</LinearLayout>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="8"
+            android:background="@drawable/empty"
+            android:layout_marginLeft="15dp"
+            android:textColor="#88000000"
+            android:inputType="number"
+            android:fontFamily="@font/regular"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 
 
@@ -230,6 +230,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+
                 <TextView
                     android:id="@+id/man"
                     android:layout_width="0dp"
@@ -307,20 +309,20 @@
     </LinearLayout>
 
 
-<Button
+    <Button
 
-    android:id="@+id/join"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:layout_marginTop="24dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
-    android:text="@string/join"
-    android:textColor="#ffffff"
-    android:textSize="14sp"
-    android:background="@drawable/join_button"
-    android:layout_below="@id/select"
-    android:onClick="joinComplete"
-   />
+        android:id="@+id/join"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/join"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:background="@drawable/join_button"
+        android:layout_below="@id/select"
+        android:onClick="joinComplete"
+        />
 
 </RelativeLayout>
