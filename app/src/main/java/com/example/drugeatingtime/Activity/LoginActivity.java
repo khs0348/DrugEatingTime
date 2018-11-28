@@ -8,13 +8,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.drugeatingtime.Dialogdata.CustomDialog;
+import com.example.drugeatingtime.Dialogdata.DialogCustom;
 import com.example.drugeatingtime.R;
 
 
 public class LoginActivity extends AppCompatActivity {
 
-    private CustomDialog oDialog;
+    private DialogCustom oDialog;
 
     LoginActivity m_oLoginActivity = null;
 
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                oDialog = new CustomDialog(m_oLoginActivity);
+                oDialog = new DialogCustom(m_oLoginActivity);
                 oDialog.setCancelable(true);
                 oDialog.show();
             }

@@ -9,21 +9,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.drugeatingtime.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("김한결");
 
         TimeSetting();
         DrugSearch();
@@ -33,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void TimeSetting() {
         TextView TimeSetting = (TextView) findViewById(R.id.GoToLogin1);
         TimeSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "로그인 해주세요", Toast.LENGTH_SHORT).show();
-                Intent it = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(it);
+                    Toast.makeText(getApplicationContext(), "로그인 해주세요", Toast.LENGTH_SHORT).show();
+                    Intent it = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(it);
             }
         });
     }
@@ -79,4 +77,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "267633642314",
+    "firebase_url": "https://drugeatingtime.firebaseio.com",
+    "project_id": "drugeatingtime",
+    "storage_bucket": "drugeatingtime.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267633642314:android:e188278f05f6e79a",
+        "android_client_info": {
+          "package_name": "com.example.drugeatingtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267633642314-ke60k0hv74m992ahmeq74gi7u2278dun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGfP2_E1FJhmpTxq-ZOQvsef2yaa42heg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
