@@ -8,10 +8,10 @@ import com.example.drugeatingtime.R;
 
 
 
-public class DialogCustom extends Dialog{
+public class CustomDialog extends Dialog{
 
 
-    public DialogCustom(Context context){
+    public CustomDialog(Context context){
         super(context,android.R.style.Theme_Translucent_NoTitleBar);
     }
 

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.drugeatingtime.R;
 
-public class DrugSerchActivity extends AppCompatActivity {
+public class DrugSearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

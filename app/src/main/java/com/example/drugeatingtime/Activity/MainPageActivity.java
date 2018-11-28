@@ -37,11 +37,11 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
     public void DrugSearch() {
-        TextView DrugSerch = (TextView) findViewById(R.id.DrugSearch);
-        DrugSerch.setOnClickListener(new View.OnClickListener() {
+        TextView DrugSearch = (TextView) findViewById(R.id.DrugSearch);
+        DrugSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getApplicationContext(), DrugSerchActivity.class);
+                Intent it = new Intent(getApplicationContext(), DrugSearchActivity.class);
                 startActivity(it);
             }
         });

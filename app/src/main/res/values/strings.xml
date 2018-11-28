@@ -26,6 +26,14 @@
     <string name="NO">X</string>
 
     <string name="join">가입완료</string>
-    
-    
+
+
+    <string name="app_name2">알람 설정</string>
+    <string name="action_settings_addition">추가</string>
+    <string name="action_settings_deletion">삭제</string>
+
+    <string name="save">저장</string>
+    <string name="cancel">취소</string>
+    <string name="drug_name">약품명</string>
+    <string name="time">시간</string>
 </resources>
