@@ -3,21 +3,13 @@ package com.example.drugeatingtime.Dialogdata;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.drugeatingtime.Activity.MainActivity;
 import com.example.drugeatingtime.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +21,6 @@ import java.util.Iterator;
 
 public class CustomDialog extends Dialog{
 
-    private FirebaseAuth firebaseAuth;
     private Button join;
     private EditText Email_make;
     private EditText Password_make;
@@ -51,13 +42,12 @@ public class CustomDialog extends Dialog{
         lpWindow.dimAmount=0.3f;
         getWindow().setAttributes(lpWindow);
         setContentView(R.layout.dialog_custom);
-        firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
-        Email_make = (EditText)findViewById(R.id.Emailmake);
+        Email_make = (EditText)findViewById(R.id.EmailMake);
         Password_make = (EditText)findViewById(R.id.PasswordMake);
         Password_make2 = (EditText)findViewById(R.id.PasswordMake2);
-        Name = (EditText)findViewById(R.id.Username);
+        Name = (EditText)findViewById(R.id.UserName);
         Birth = (EditText)findViewById(R.id.UserBirth);
 
         joinComplete();
