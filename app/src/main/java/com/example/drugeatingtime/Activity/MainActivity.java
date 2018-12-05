@@ -13,10 +13,13 @@ import com.example.drugeatingtime.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private  final long FINISG_INTERNAL_TIME = 2000;
+    private  long backPressedTime = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         TimeSetting();
@@ -27,7 +30,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime-backPressedTime;
 
+        if(0 <= intervalTime && FINISG_INTERNAL_TIME >= intervalTime){
+            super.onBackPressed();
+        }else{
+            backPressedTime =tempTime;
+            Toast.makeText(getApplicationContext(),"한번 더 누르면 종료됩니다.",Toast.LENGTH_SHORT).show();
+        }
+
+    }
     public void TimeSetting() {
         TextView TimeSetting = (TextView) findViewById(R.id.GoToLogin1);
         TimeSetting.setOnClickListener(new View.OnClickListener() {

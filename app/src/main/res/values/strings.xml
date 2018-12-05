@@ -36,4 +36,6 @@
     <string name="cancel">취소</string>
     <string name="drug_name">약품명</string>
     <string name="time">시간</string>
+
+    <string name="url">https://terms.naver.com/medicineSearch.nhn?mode=nameSearch</string>
 </resources>

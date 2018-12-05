@@ -60,9 +60,9 @@ public class CustomDialog extends Dialog{
             while (child.hasNext()) {
                 String mail = Email_make.getText().toString();
                 mail = mail.substring(0,mail.lastIndexOf("."));
-                String adress = Email_make.getText().toString();
-                adress = adress.substring(adress.lastIndexOf(".")+1);
-                mail = mail +adress;
+                String address = Email_make.getText().toString();
+                address = address.substring(address.lastIndexOf(".")+1);
+                mail = mail +address;
                 if (mail.equals(child.next().getKey())) {
                     Email_make.setError("중복된 이메일 입니다.");
                     databaseReference.removeEventListener(this);

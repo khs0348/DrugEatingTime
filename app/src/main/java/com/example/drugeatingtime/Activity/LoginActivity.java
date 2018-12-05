@@ -1,5 +1,6 @@
 package com.example.drugeatingtime.Activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -72,10 +73,15 @@ public class LoginActivity extends AppCompatActivity {
 
     LoginActivity m_oLoginActivity = null;
 
+    public static Activity loginActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        loginActivity = LoginActivity.this;
+
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
         m_oLoginActivity = this;
 
@@ -136,10 +142,9 @@ public class LoginActivity extends AppCompatActivity {
                                     }else{
                                         Toast.makeText(getApplicationContext(), "비밀번호가 틀렸습니다!", Toast.LENGTH_LONG).show();
                                     }
-                                }else{
-                                    Toast.makeText(getApplicationContext(), "존재하지 않는 아이디입니다.", Toast.LENGTH_LONG).show();
                                 }
                             }
+                            Toast.makeText(getApplicationContext(), "존재하지 않는 아이디입니다.", Toast.LENGTH_LONG).show();
                         }
 
                         @Override

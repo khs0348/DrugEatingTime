@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:orientation="vertical">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/Save"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-
         android:orientation="horizontal">
     <Button
+        android:id="@+id/btnAddAlarm"
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
         android:layout_weight="1"
         android:background="#6fb8b2"
-        android:text="저장"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        />
-    <Button
-        android:id="@+id/Cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_weight="1"
-        android:background="#6fb8b2"
-        android:text="취소"
-        android:textColor="#ffffff"
-        android:textSize="20dp"/>
+        android:text="저장" />
+        <Button
+            android:id="@+id/Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="#6fb8b2"
+            android:text="취소"
+            android:textColor="#ffffff"
+            android:textSize="20dp"/>
     </LinearLayout>
 
 
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:timePickerMode="spinner"></TimePicker>
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:spinnersShown="true"
-        android:datePickerMode="calendar"></DatePicker>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TimePicker
+            android:id="@+id/timePickerAlarmTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:timePickerMode="spinner"/>
+    </LinearLayout>
+
+
     <ListView
-        android:layout_width="wrap_content"
+        android:id="@+id/listViewAlarm"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"></ListView>
 
 </LinearLayout>

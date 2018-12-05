@@ -24,5 +24,10 @@
 
     <include layout="@layout/content_time_setting" />
 
+    <TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:timePickerMode="spinner"></TimePicker>
 
 </android.support.design.widget.CoordinatorLayout>
