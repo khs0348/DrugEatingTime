@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.example.drugeatingtime.R;
 public class LinearLayoutSingleAlarmItem extends LinearLayout {
     Context mContext;
     TextView textViewTime;
+
     Button btnSingleAlarmItemCancel;
 
     AlarmData alarmData;
@@ -52,7 +54,7 @@ public class LinearLayoutSingleAlarmItem extends LinearLayout {
         this.alarmData = alarmData;
         this.position = position;
 
-        textViewTime.setText(alarmData.hh+":"+alarmData.mm +" and requestCode : "+alarmData.reqCode);
+        textViewTime.setText(alarmData.hh+":"+alarmData.mm + "     " + alarmData.name );
 
         return true;
     }

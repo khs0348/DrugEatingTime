@@ -10,7 +10,6 @@
     tools:showIn="@layout/activity_time_set_main">
 
 
-
     <ListView
         android:id="@+id/listViewAlarm"
         android:layout_width="match_parent"

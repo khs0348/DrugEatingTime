@@ -66,11 +66,10 @@ public class AdapterAlarm extends BaseAdapter {
 
         @Override
         public void onClicked(int hh, int mm, int reqCode, int position) {
-            Toast.makeText(mContext, "position : "+position + " reqCode :"+reqCode, 0).show();
+            Toast.makeText(mContext, hh + ":" +mm +" 알람이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
             AlarmManager alarmManager = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
-//			    Intent i = new Intent(mContext ,AlarmTestForHaruActivity.class);
             Intent intent = new Intent(mContext, ActivityAlarmedTimeShow.class);
-            Toast.makeText(mContext, "reqCode : "+reqCode, 0).show();
+           // Toast.makeText(mContext, "reqCode : "+reqCode, Toast.LENGTH_SHORT).show();
             PendingIntent pi = PendingIntent.getActivity(mContext, reqCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
             alarmManager.cancel(pi);
             removeData(position);

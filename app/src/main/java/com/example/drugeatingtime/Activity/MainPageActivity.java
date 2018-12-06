@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.drugeatingtime.Alarmdata.TimeSetActivity;
 import com.example.drugeatingtime.R;
 
 
@@ -45,7 +45,7 @@ public class MainPageActivity extends AppCompatActivity {
         TimeSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getApplicationContext(), TimeSettingActivity.class);
+                Intent it = new Intent(getApplicationContext(), TimeSetActivity.class);
                 startActivity(it);
             }
         });

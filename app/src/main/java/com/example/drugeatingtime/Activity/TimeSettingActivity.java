@@ -1,19 +1,24 @@
 package com.example.drugeatingtime.Activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
-
-import com.example.drugeatingtime.Dialogdata.TimeSetDialog;
+import com.example.drugeatingtime.Alarmdata.AdapterAlarm;
+import com.example.drugeatingtime.Alarmdata.TimeSetActivity;
 import com.example.drugeatingtime.R;
+
 
 public class TimeSettingActivity extends AppCompatActivity {
 
-    private TimeSetDialog sDialog;
+    ListView listViewAlarm;
+    AdapterAlarm arrayAdapterAlarmList;
+
     TimeSettingActivity m_sTimeSettingActivity = null;
 
     @Override
@@ -26,7 +31,11 @@ public class TimeSettingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        listViewAlarm	= (ListView)findViewById(R.id.listViewAlarm);
+        listViewAlarm.setAdapter(arrayAdapterAlarmList);
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,14 +51,15 @@ public class TimeSettingActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings_addition) {
 
-            sDialog = new TimeSetDialog(m_sTimeSettingActivity);
-            sDialog.setCancelable(true);
-            sDialog.show();
+            Intent it = new Intent(getApplicationContext(), TimeSetActivity.class);
+            startActivity(it);
 
             return true;
         }
 
         if (id == R.id.action_settings_deletion){
+
+
             return  true;
         }
         return super.onOptionsItemSelected(item);
