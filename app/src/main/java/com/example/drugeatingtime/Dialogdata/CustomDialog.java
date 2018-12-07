@@ -87,6 +87,7 @@ public class CustomDialog extends Dialog{
             mail = mail + com;
             databaseReference.child(mail).child("password").setValue(Password_make.getText().toString());
             databaseReference.child(mail).child("birth").setValue(Birth.getText().toString());
+            databaseReference.child(mail).child("check").setValue("1");
             databaseReference.child(mail).child("name").setValue(Name.getText().toString());
             databaseReference.child(mail).child("Email").setValue(Email_make.getText().toString());
         }

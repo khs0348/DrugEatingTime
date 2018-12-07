@@ -23,19 +23,24 @@ import java.util.Iterator;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static String Usercheck = "";
+    public static String idmail = "";
+
     public class Userdata{
         private String Email;
         private String birth;
         private String name;
         private String password;
+        private String check;
 
         public Userdata(){}
 
-        public Userdata(String password, String Email, String name, String birth){
+        public Userdata(String password, String Email, String name, String birth, String check){
             this.Email = Email;
             this.birth = birth;
             this.name = name;
             this.password = password;
+            this.check = check;
         }
 
 
@@ -45,6 +50,14 @@ public class LoginActivity extends AppCompatActivity {
 
         public String getEmail() {
             return Email;
+        }
+
+        public void setCheck(String check) {
+            this.check = check;
+        }
+
+        public String getCheck() {
+            return check;
         }
 
         public void setBirth(String birth) {
@@ -122,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                     String com = Email_input.getText().toString();
                     com = com.substring(com.lastIndexOf(".") + 1);
                     email = email + com;
+                    idmail = email;
                     db = databaseReference.child(email);
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -134,8 +148,10 @@ public class LoginActivity extends AppCompatActivity {
                                     Userdata userdata = new Userdata();
                                     userdata.setPassword(dataSnapshot.child(email).child("password").getValue().toString());
                                     userdata.setEmail(dataSnapshot.child(email).child("Email").getValue().toString());
+                                    userdata.setCheck(dataSnapshot.child(email).child("check").getValue().toString());
                                     if(userdata.getPassword().equals(Password_input.getText().toString())) {
                                         Toast.makeText(getApplicationContext(), "로그인!", Toast.LENGTH_LONG).show();
+                                        Usercheck = userdata.getCheck();
                                         Intent it = new Intent(getApplicationContext(), MainPageActivity.class);
                                         startActivity(it);
                                         return;
@@ -157,6 +173,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 }
 
 

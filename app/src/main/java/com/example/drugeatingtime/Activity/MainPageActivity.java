@@ -18,6 +18,7 @@ public class MainPageActivity extends AppCompatActivity {
     private Toast mToast;
     public static Activity loginonActivity;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

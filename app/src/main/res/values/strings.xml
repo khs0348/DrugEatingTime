@@ -38,4 +38,5 @@
     <string name="time">시간</string>
 
     <string name="url">https://terms.naver.com/medicineSearch.nhn?mode=nameSearch</string>
+    <string name="version">1.0.0v</string>
 </resources>
