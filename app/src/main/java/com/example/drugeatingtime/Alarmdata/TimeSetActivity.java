@@ -3,7 +3,6 @@ package com.example.drugeatingtime.Alarmdata;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -74,7 +73,6 @@ public class TimeSetActivity extends AppCompatActivity {
         alarmManager.setTimeZone("");
 
 
-
         btnAddAlarm.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -83,45 +81,58 @@ public class TimeSetActivity extends AppCompatActivity {
                 int hh = timePickerAlarmTime.getCurrentHour();
                 int mm = timePickerAlarmTime.getCurrentMinute();
                 int reqCode = DEFAULT_ALARM_REQUEST+arrayListAlarmTimeItem.size();
-                String name =DrugName.getText().toString();
                 int i =arrayListAlarmTimeItem.size();
 
-                arrayListAlarmTimeItem.add(new AlarmData(hh, mm, reqCode,name));
-                arrayAdapterAlarmList.notifyDataSetChanged();
+                String name =DrugName.getText().toString();
 
-                sharedEditor.putInt("list"+i+"hh", hh);
-                sharedEditor.putInt("list"+i+"mm", mm);
-                sharedEditor.putInt("list"+i+"reqCode", reqCode);
-                sharedEditor.putString("list"+i+"name",name);
-                sharedEditor.putInt("size", i);
-                sharedEditor.commit();
+                String hh_precede="";
+                if(hh<10){ hh_precede="0";}
 
-                GregorianCalendar gregorianCalendar = new GregorianCalendar(TimeZone.getTimeZone("GMT+09:00"));
+                String mm_precede="";
+                if(mm<10){ mm_precede ="0"; }
 
-                int currentYY = currentCalendar.get(Calendar.YEAR);
-                int currentMM = currentCalendar.get(Calendar.MONTH);
-                int currentDD = currentCalendar.get(Calendar.DAY_OF_MONTH);
+                if(DrugName.getText().toString().replace(" ","").equals("")){
+                    Toast.makeText(getBaseContext(),"약품명을 입력해주세요.",Toast.LENGTH_SHORT).show();
+                }else {
+                    arrayListAlarmTimeItem.add(new AlarmData(hh_precede,hh, mm, mm_precede, reqCode, name));
+                    arrayAdapterAlarmList.notifyDataSetChanged();
 
-                gregorianCalendar.set(currentYY, currentMM, currentDD, hh, mm,00);
+                    sharedEditor.putInt("list" + i + "hh", hh);
+                    sharedEditor.putString("list" + i + "hh_precede", hh_precede);
+                    sharedEditor.putInt("list" + i + "mm", mm);
+                    sharedEditor.putString("list" + i + "mm_precede", mm_precede);
+                    sharedEditor.putInt("list" + i + "reqCode", reqCode);
+                    sharedEditor.putString("list" + i + "name", name);
+                    sharedEditor.putInt("size", i);
+                    sharedEditor.commit();
 
-                if(gregorianCalendar.getTimeInMillis() < currentCalendar.getTimeInMillis()){
-                    gregorianCalendar.set(currentYY, currentMM, currentDD+1, hh, mm,00);
-                    Log.i("TAG",gregorianCalendar.getTimeInMillis()+":");
+                    GregorianCalendar gregorianCalendar = new GregorianCalendar(TimeZone.getTimeZone("GMT+09:00"));
+
+                    int currentYY = currentCalendar.get(Calendar.YEAR);
+                    int currentMM = currentCalendar.get(Calendar.MONTH);
+                    int currentDD = currentCalendar.get(Calendar.DAY_OF_MONTH);
+
+                    gregorianCalendar.set(currentYY, currentMM, currentDD, hh, mm, 00);
+
+                    if (gregorianCalendar.getTimeInMillis() < currentCalendar.getTimeInMillis()) {
+                        gregorianCalendar.set(currentYY, currentMM, currentDD + 1, hh, mm, 00);
+                        Log.i("TAG", gregorianCalendar.getTimeInMillis() + ":");
+                    }
+
+
+                    Intent intent = new Intent(TimeSetActivity.this, ActivityAlarmedTimeShow.class);
+                    intent.putExtra("alarm", "알람");
+                    intent.putExtra("time", hh + ":" + mm);
+                    intent.putExtra("data", currentCalendar.getTime().toGMTString());
+                    intent.putExtra("reqCode", reqCode);
+                    intent.putExtra("name", name);
+
+                    Toast.makeText(mContext, name + " " + "알람 추가!", Toast.LENGTH_SHORT).show();
+                    PendingIntent pi = PendingIntent.getActivity(TimeSetActivity.this, reqCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pi);
+
+                    DrugName.setText("");
                 }
-
-
-                Intent intent = new Intent(TimeSetActivity.this, ActivityAlarmedTimeShow.class);
-                intent.putExtra("alarm","알람");
-                intent.putExtra("time", hh+":"+mm);
-                intent.putExtra("data",currentCalendar.getTime().toGMTString());
-                intent.putExtra("reqCode", reqCode);
-                intent.putExtra("name",name);
-
-                Toast.makeText(mContext, name + " " + "알람 추가!", Toast.LENGTH_SHORT).show();
-                PendingIntent pi = PendingIntent.getActivity(TimeSetActivity.this, reqCode, intent,PendingIntent.FLAG_UPDATE_CURRENT );
-                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis() ,AlarmManager.INTERVAL_DAY, pi);
-
-
             }
         });
     }
@@ -133,14 +144,17 @@ public class TimeSetActivity extends AppCompatActivity {
         if(size !=0)
             for(int i = 0 ; i < size+1; i ++ ){
                 int hh = sharedPref.getInt("list"+i+"hh", 0);
+                String hh_precede = sharedPref.getString("list"+i+"hh_precede","");
                 int mm = sharedPref.getInt("list"+i+"mm", 0);
+                String mm_precede = sharedPref.getString("list"+i+"mm_precede","");
                 int reqCode = sharedPref.getInt("list"+i+"reqCode", 0);
                 String name = sharedPref.getString("list"+i+"name","");
 
-                arrayListAlarmTimeItem.add(new AlarmData(hh, mm, reqCode,name));
+                arrayListAlarmTimeItem.add(new AlarmData(hh_precede,hh, mm,mm_precede ,reqCode,name));
             }
         arrayAdapterAlarmList.notifyDataSetChanged();
     }
+
     public void btnCancel() {
         Button btnCancel = (Button)findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {

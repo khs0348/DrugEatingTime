@@ -22,6 +22,7 @@ public class LinearLayoutSingleAlarmItem extends LinearLayout {
 
     public LinearLayoutSingleAlarmItem(Context context) {
         super(context);
+
         mContext = context;
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -54,11 +55,8 @@ public class LinearLayoutSingleAlarmItem extends LinearLayout {
         this.alarmData = alarmData;
         this.position = position;
 
-        textViewTime.setText(alarmData.hh+":"+alarmData.mm + "     " + alarmData.name );
+        textViewTime.setText(alarmData.hh_precede +alarmData.hh+":"+ alarmData.mm_precede +alarmData.mm + "     " + alarmData.name );
 
         return true;
     }
-
-
-
 }

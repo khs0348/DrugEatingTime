@@ -6,13 +6,17 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.drugeatingtime.Alarmdata.LinearLayoutSingleAlarmItem.OnRemoveButtonClickListner;
+import com.example.drugeatingtime.R;
 
 public class AdapterAlarm extends BaseAdapter {
 
@@ -66,14 +70,17 @@ public class AdapterAlarm extends BaseAdapter {
 
         @Override
         public void onClicked(int hh, int mm, int reqCode, int position) {
-            Toast.makeText(mContext, hh + ":" +mm +" 알람이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+            String mm_precede="";
+            if(mm<10){ mm_precede="0"; }else{ mm_precede=""; }
+            String hh_precede="";
+            if(hh<10){ hh_precede="0";}else{ hh_precede="";}
+            Toast.makeText(mContext, hh_precede + hh + ":" +mm_precede+mm +" 알람이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
             AlarmManager alarmManager = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
             Intent intent = new Intent(mContext, ActivityAlarmedTimeShow.class);
-           // Toast.makeText(mContext, "reqCode : "+reqCode, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(mContext, "reqCode : "+reqCode, Toast.LENGTH_SHORT).show();
             PendingIntent pi = PendingIntent.getActivity(mContext, reqCode, intent, PendingIntent.FLAG_CANCEL_CURRENT);
             alarmManager.cancel(pi);
             removeData(position);
         }
     };
-
 }

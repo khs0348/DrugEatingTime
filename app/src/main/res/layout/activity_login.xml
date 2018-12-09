@@ -33,6 +33,7 @@
         android:layout_marginRight="45dp"
         android:background="@drawable/email_input"
         android:hint="@string/email"
+        android:textColorHint="#66000000"
         android:inputType="textEmailAddress"
         android:paddingLeft="15dp"
         android:textColor="#66000000"
@@ -50,6 +51,7 @@
         android:paddingLeft="15dp"
         android:background="@drawable/password_input"
         android:hint="@string/password"
+        android:textColorHint="#66000000"
         android:textSize="15sp"
         android:textColor="#66000000"
         android:inputType="textPassword"
@@ -91,13 +93,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="40dp"
         android:layout_below="@id/login_maintain"
         >
     <TextView
         android:id="@+id/find_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
         android:textSize="14sp"
         android:textColor="#66000000"
         android:text="@string/find_email" />

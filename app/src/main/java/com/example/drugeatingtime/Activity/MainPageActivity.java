@@ -34,9 +34,9 @@ public class MainPageActivity extends AppCompatActivity {
 
     public void onBackPressed(){
         if(mToast==null){
-            mToast =Toast.makeText(getApplicationContext(),"상단의 로그아웃 버튼을 눌러주세요.",Toast.LENGTH_SHORT);
+            mToast =Toast.makeText(getApplicationContext(),"하단의 로그아웃 버튼을 눌러주세요.",Toast.LENGTH_SHORT);
         }else {
-            mToast.setText("상단의 로그아웃 버튼을 눌러주세요.");
+            mToast.setText("하단의 로그아웃 버튼을 눌러주세요.");
         }
         mToast.show();
     }

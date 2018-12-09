@@ -22,7 +22,7 @@ public class AppSettingActivity extends AppCompatActivity {
 
     public static boolean checkPush = true;
     public static Activity appSettingActivity;
-    public String Usercheck = LoginActivity.Usercheck;
+    public String Usercheck = LoginActivity.Userdata.getCheck();
     public String mail = LoginActivity.idmail;
 
     boolean boxState;
@@ -43,7 +43,6 @@ public class AppSettingActivity extends AppCompatActivity {
         text = (TextView)findViewById(R.id.pushText);
         layout = (RelativeLayout)findViewById(R.id.push);
         sendEamail = (LinearLayout) findViewById(R.id.EmailSend);
-
 
         if(Usercheck.equals("1")){
             boxState = true;
@@ -67,6 +66,7 @@ public class AppSettingActivity extends AppCompatActivity {
                     box.setChecked(false);
                     text.setText("푸쉬알림을 받지 않습니다.");
                     checkPush = false;
+                    LoginActivity.Userdata.setCheck("0");
                     upDatecheck(checkPush);
                     FirebaseMessaging.getInstance().setAutoInitEnabled(false);
                 }
@@ -74,6 +74,7 @@ public class AppSettingActivity extends AppCompatActivity {
                     box.setChecked(true);
                     text.setText("푸쉬알림을 받습니다.");
                     checkPush = true;
+                    LoginActivity.Userdata.setCheck("1");
                     upDatecheck(checkPush);
                     FirebaseMessaging.getInstance().setAutoInitEnabled(true);
                 }
@@ -86,6 +87,7 @@ public class AppSettingActivity extends AppCompatActivity {
                     box.setChecked(false);
                     text.setText("푸쉬알림을 받지 않습니다.");
                     checkPush = false;
+                    LoginActivity.Userdata.setCheck("0");
                     upDatecheck(checkPush);
                     FirebaseMessaging.getInstance().setAutoInitEnabled(false);
                 }
@@ -93,6 +95,7 @@ public class AppSettingActivity extends AppCompatActivity {
                     box.setChecked(true);
                     text.setText("푸쉬알림을 받습니다.");
                     checkPush = true;
+                    LoginActivity.Userdata.setCheck("1");
                     upDatecheck(checkPush);
                     FirebaseMessaging.getInstance().setAutoInitEnabled(true);
                 }
@@ -111,7 +114,6 @@ public class AppSettingActivity extends AppCompatActivity {
 
     }
     public void onBackPressed(){
-        Log.d("finish","시발");
         appSettingActivity.finish();
     }
 

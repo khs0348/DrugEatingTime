@@ -40,19 +40,13 @@
         android:layout_marginLeft="30dp"
         android:src="@drawable/main_word"/>
 
-    <Button
-        android:id="@+id/DoLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="로그인"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/login_button"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="370dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
 
@@ -64,7 +58,7 @@
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="알림설정"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textColor="#ffffff"
         android:background="@drawable/main_button"/>
 
@@ -75,17 +69,29 @@
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:text="약품검색"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="#ffffff"
             android:background="@drawable/main_button"/>
     <TextView
         android:id="@+id/GoToLogin3"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
         android:text="어플설정"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textColor="#ffffff"
         android:background="@drawable/main_button"/>
+
+        <Button
+            android:id="@+id/DoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:textSize="17sp"
+            android:textColor="#ffffff"
+            android:text="로그인"
+            android:background="@drawable/main_button"
+            />
     </LinearLayout>
 </RelativeLayout>

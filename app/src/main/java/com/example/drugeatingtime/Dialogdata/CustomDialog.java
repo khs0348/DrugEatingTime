@@ -39,7 +39,7 @@ public class CustomDialog extends Dialog{
 
         WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
         lpWindow.flags =WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        lpWindow.dimAmount=0.3f;
+        lpWindow.dimAmount=0.5f;
         getWindow().setAttributes(lpWindow);
         setContentView(R.layout.dialog_custom);
         databaseReference = FirebaseDatabase.getInstance().getReference("users");

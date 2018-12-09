@@ -164,7 +164,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:onClick="send">
+             >
 
                 <TextView
                     android:layout_width="match_parent"

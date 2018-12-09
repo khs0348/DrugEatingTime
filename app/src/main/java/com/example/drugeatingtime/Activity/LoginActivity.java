@@ -2,9 +2,12 @@ package com.example.drugeatingtime.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,12 +29,12 @@ public class LoginActivity extends AppCompatActivity {
     public static String Usercheck = "";
     public static String idmail = "";
 
-    public class Userdata{
+    public static class Userdata{
         private String Email;
         private String birth;
         private String name;
         private String password;
-        private String check;
+        private static String check;
 
         public Userdata(){}
 
@@ -52,11 +55,11 @@ public class LoginActivity extends AppCompatActivity {
             return Email;
         }
 
-        public void setCheck(String check) {
-            this.check = check;
+        public static void setCheck(String a) {
+            check = a;
         }
 
-        public String getCheck() {
+        public static String getCheck() {
             return check;
         }
 
@@ -84,8 +87,14 @@ public class LoginActivity extends AppCompatActivity {
     private DatabaseReference db;
     private String email;
 
-    LoginActivity m_oLoginActivity = null;
+    private boolean saveLoginData;
+    private String id;
+    private String pwd;
+    private CheckBox checkBox;
 
+    private SharedPreferences appData;
+
+    LoginActivity m_oLoginActivity = null;
     public static Activity loginActivity;
 
     @Override
@@ -95,15 +104,24 @@ public class LoginActivity extends AppCompatActivity {
 
         loginActivity = LoginActivity.this;
 
+        appData = getSharedPreferences("appData",MODE_PRIVATE);
+        load();
+
+        Email_input = (EditText)findViewById(R.id.Email_input);
+        Password_input = (EditText)findViewById(R.id.Password_input);
+        checkBox = (CheckBox)findViewById(R.id.login_maintain);
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
         m_oLoginActivity = this;
 
         registration();//회원가입 클릭
+        if(saveLoginData){
+            Email_input.setText(id);
+            Password_input.setText(pwd);
+            checkBox.setChecked(saveLoginData);
+        }
         logincorrect();//로그인버튼 클릭
-
-        Email_input = (EditText)findViewById(R.id.Email_input);
-        Password_input = (EditText)findViewById(R.id.Password_input);
-
     }
 
     public void registration() { //회원가입 클릭시 커스텀 다이얼로그 창 띄우는 함수
@@ -151,6 +169,7 @@ public class LoginActivity extends AppCompatActivity {
                                     userdata.setCheck(dataSnapshot.child(email).child("check").getValue().toString());
                                     if(userdata.getPassword().equals(Password_input.getText().toString())) {
                                         Toast.makeText(getApplicationContext(), "로그인!", Toast.LENGTH_LONG).show();
+                                        save();
                                         Usercheck = userdata.getCheck();
                                         Intent it = new Intent(getApplicationContext(), MainPageActivity.class);
                                         startActivity(it);
@@ -174,8 +193,18 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void save(){
+        SharedPreferences.Editor editor =appData.edit();
+
+        editor.putBoolean("SAVE_LOGIN_DATA",checkBox.isChecked());
+        editor.putString("ID",Email_input.getText().toString().trim());
+        editor.putString("PWD",Password_input.getText().toString().trim());
+
+        editor.apply();
+    }
+    private void load(){
+        saveLoginData = appData.getBoolean("SAVE_LOGIN_DATA",false);
+        id = appData.getString("ID","");
+        pwd = appData.getString("PWD","");
+    }
 }
-
-
-
-

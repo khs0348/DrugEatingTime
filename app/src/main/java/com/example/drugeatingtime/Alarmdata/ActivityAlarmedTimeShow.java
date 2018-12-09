@@ -26,11 +26,13 @@ public class ActivityAlarmedTimeShow extends Activity {
 
     TextView textViewAlarmedTime;
     TextView textViewAlarmedData;
-
+    TextView textViewDrugname;
+    TextView textViewDate;
     long mNow;
     Date mDate;
-    SimpleDateFormat mFormat =new SimpleDateFormat("yyyy/MM/dd \nHH:mm");
-
+    //SimpleDateFormat mFormat =new SimpleDateFormat("yyyy/MM/dd \nHH:mm");
+    SimpleDateFormat mFormat =new SimpleDateFormat("HH:mm");
+    SimpleDateFormat mFormat2 =new SimpleDateFormat("MMM dd일 E요일");
     MediaPlayer mediaPlayer;
     Vibrator mVibe;
 
@@ -44,13 +46,13 @@ public class ActivityAlarmedTimeShow extends Activity {
 
         AlarmedTimeShowActivity =ActivityAlarmedTimeShow.this;
 
-        mediaPlayer = MediaPlayer.create(this,R.raw.schoolbell);
+        mediaPlayer = MediaPlayer.create(this,R.raw.call);
 
         mediaPlayer.start();
         mediaPlayer.setLooping(true);
 
         mVibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-        long[] pattern ={0,2000,3000};
+        long[] pattern ={0,2500,2700};
         mVibe.vibrate(pattern,0);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
@@ -68,12 +70,17 @@ public class ActivityAlarmedTimeShow extends Activity {
         textViewAlarmedTime = (TextView)findViewById(R.id.textViewAlarmedTime);
         Intent intent = getIntent();
         String alarm = intent.getStringExtra("alarm");
-        String time = intent.getStringExtra("time");
+        textViewAlarmedTime.setText(alarm);
+
+        textViewDrugname = (TextView)findViewById(R.id.textViewDrugName);
         String name = intent.getStringExtra("name");
-        textViewAlarmedTime.setText(alarm + "\n\n" + name);
+        textViewDrugname.setText(name);
 
         textViewAlarmedData =(TextView)findViewById(R.id.textViewAlarmedData);
         textViewAlarmedData.setText(getTime());
+
+        textViewDate =(TextView)findViewById(R.id.textViewDate);
+        textViewDate.setText(getTime2());
 
     }
     public void BtnAlarmRelieve() {
@@ -91,21 +98,28 @@ public class ActivityAlarmedTimeShow extends Activity {
         });
     }
 
-    public void onBackPressed(){} // 뒤로가지 못하게 하는 함수
+    public void onBackPressed(){
+       mediaPlayer.stop();
+       mediaPlayer.setLooping(false);
+       AlarmedTimeShowActivity.finish();
+       mVibe.cancel();
+       wakeLock.release();
+    }
 
     @Override
     public void onPause(){
         super.onPause();
-       // mediaPlayer.stop();
-        //mediaPlayer.setLooping(false);
-        //AlarmedTimeShowActivity.finish();
-      // mVibe.cancel();
-        //wakeLock.release();
+
     }
 
     private String getTime(){
         mNow = System.currentTimeMillis();
         mDate = new Date(mNow);
         return mFormat.format(mDate);
+    }
+    private String getTime2(){
+        mNow = System.currentTimeMillis();
+        mDate = new Date(mNow);
+        return mFormat2.format(mDate);
     }
 }

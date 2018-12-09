@@ -9,16 +9,25 @@
         android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_marginLeft="30dp"
         android:text="NameTime"
         android:gravity="left"
-        android:layout_weight="1"
+        android:onClick="Delete"
+        android:clickable="true"
+        android:textSize="15sp"
+        android:textColor="#66000000"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/btnSingleAlarmItemCancel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="삭제" />
+        android:layout_height="40dp"
+        android:layout_marginRight="25dp"
+        android:textColor="#e66fb8b2"
+        android:textSize="15sp"
+        android:text="삭제"
+        android:background="@drawable/shape_on"
 
+        />
 </LinearLayout>
