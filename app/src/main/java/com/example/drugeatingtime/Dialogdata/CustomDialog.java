@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.drugeatingtime.R;
 import com.google.firebase.database.DataSnapshot;
@@ -108,6 +109,7 @@ public class CustomDialog extends Dialog{
                     return;
                 } else {
                     databaseReference.addListenerForSingleValueEvent(checkRegister);
+                    Toast.makeText(getContext(),"회원가입 완료",Toast.LENGTH_SHORT).show();
                 }
                 };
 
