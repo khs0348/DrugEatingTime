@@ -42,7 +42,7 @@
             android:cursorVisible="false"
             android:gravity="left"
             android:inputType="text"
-            android:maxLength="10"
+            android:maxLength="8"
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </LinearLayout>

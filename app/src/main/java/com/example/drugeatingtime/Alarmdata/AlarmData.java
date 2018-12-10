@@ -1,6 +1,5 @@
 package com.example.drugeatingtime.Alarmdata;
 
-
 public class AlarmData {
     public int hh;
     public String hh_precede;

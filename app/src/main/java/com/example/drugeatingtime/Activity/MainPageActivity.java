@@ -9,10 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.drugeatingtime.Alarmdata.TimeSetActivity;
 import com.example.drugeatingtime.R;
-
 
 public class MainPageActivity extends AppCompatActivity {
     private Toast mToast;

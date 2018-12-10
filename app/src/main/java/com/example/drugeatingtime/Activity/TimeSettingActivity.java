@@ -13,7 +13,6 @@ import com.example.drugeatingtime.Alarmdata.AdapterAlarm;
 import com.example.drugeatingtime.Alarmdata.TimeSetActivity;
 import com.example.drugeatingtime.R;
 
-
 public class TimeSettingActivity extends AppCompatActivity {
 
     ListView listViewAlarm;

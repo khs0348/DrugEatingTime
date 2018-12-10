@@ -3,7 +3,6 @@ package com.example.drugeatingtime.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.example.drugeatingtime.R;
 
 public class IntroActivity extends MainActivity {
@@ -22,6 +21,6 @@ public class IntroActivity extends MainActivity {
 
                 finish();
             }
-        },1000);//n초후 MainActivity 로 화면 전환
+        },2000);//n초후 MainActivity 로 화면 전환
     }
 }
