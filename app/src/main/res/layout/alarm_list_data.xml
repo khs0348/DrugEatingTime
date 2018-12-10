@@ -13,8 +13,6 @@
         android:layout_marginLeft="30dp"
         android:text="NameTime"
         android:gravity="left"
-        android:onClick="Delete"
-        android:clickable="true"
         android:textSize="15sp"
         android:textColor="#66000000"
         android:textAppearance="?android:attr/textAppearanceLarge" />
